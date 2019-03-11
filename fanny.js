@@ -1,11 +1,24 @@
-A =
-[21.0][16.0][16.0][13.0][11.0]
-[17.0][18.0][14.0][23.0][13.0]
-[32.0][27.0][15.0][41.0][19.0]
-[6.0] [10.0][12.0][15.0][43.0]
-for (let i = 0; i < A.length; i++) {
-    for (let j = 0; j < A[i].length; j++) {
-        System.out.print("["+A[i][j]+"]");
+
+
+function bb() {
+    console.log("hola");
+    var nombres1 = [["susana", "martinez", 18], ["susa", "martinez", 20]];
+    for (var i = 0; i < nombres1; i++) {
+        for (var j = 0; j < nombres1.length; j++) {
+            var hilera = document.createElement("tr")
+            var celda = document.createElement("td");
+            var textoCelda = document.createTextNode(nombres1(1, 1));
+            celda.appendChild(textoCelda);
+            hilera.appendChild(celda);
+            tblBody.appendChild(hilera);
+            var textoCelda = document.createTextNode(nombres1(0, 1));
+            var celda = document.createElement("td");
+            celda.appendChild(textoCelda);
+            hilera.appendChild(celda);
+        }
+
+
     }
-    System.out.println();
 }
+
+

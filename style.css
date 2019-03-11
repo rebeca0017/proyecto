@@ -1,0 +1,16 @@
+table {
+    border-collapse: collapse;
+    width: 150px;
+    margin-left: auto;
+    margin-right: auto;
+}
+tr:first-child {
+    background:#f00;
+  }
+  th,
+td{
+    border: 2px solid rgb(13, 12, 14);
+    padding: 20px;
+    background: rgb(238, 233, 240);
+    font-weight: bold;
+}

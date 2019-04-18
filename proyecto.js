@@ -1,74 +1,71 @@
 
 
-function generartabla() {
+function generatetable() {
 
-    var cabeza = ["apellidos", "nombres", "edad"];
+    var head = ["APELLIDOS", "NOMBRES", "EDAD","mamama"];
 
-    var nombres = [["susana", "martinez", 18], ["susa", "jose", 20], ["susa", "mora", 20], ["susa", "morales", 20]];
+    var data = [["susana", "martinez", 18], ["susa", "jose", 20,], ["susa", "mora", 20], ["susa", "morales", 20]];
 
 
 
 
     var body = document.getElementsByTagName("body")[0];
-    var tabla = document.createElement("table");
-    tabla.className=active;
+    var table = document.createElement("table");
+    var div = document.createElement("div");
+    div.className = 'table-responsive'
+    table.className = 'table table-hover';
     var tblBody = document.createElement("tbody");
+    var tblHead = document.createElement("thead");
 
 
 
-    var hilera = document.createElement("td")
-    var celda = document.createElement("tr");
-    var textoCelda = document.createTextNode(cabeza[1]);
-    celda.appendChild(textoCelda);
-    hilera.appendChild(celda);
-    tblBody.appendChild(hilera);
+    head.forEach(head => {
+        var row = document.createElement("th")
+        var cell = document.createElement("tr");
+        var textcell = document.createTextNode(head);
+        cell.appendChild(textcell);
+        row.appendChild(cell);
+        tblHead.appendChild(row);
 
 
-    var hilera = document.createElement("td")
-    var celda = document.createElement("tr");
-    var textoCelda = document.createTextNode(cabeza[0]);
-    celda.appendChild(textoCelda);
-    hilera.appendChild(celda);
-    tblBody.appendChild(hilera);
-
-    var hilera = document.createElement("td")
-    var celda = document.createElement("tr");
-    var textoCelda = document.createTextNode(cabeza[2]);
-    celda.appendChild(textoCelda);
-    hilera.appendChild(celda);
-    tblBody.appendChild(hilera);
-
-    nombres.forEach(nombres => {
-        var hilera = document.createElement("tr")
-        var celda = document.createElement("td");
-        var textoCelda = document.createTextNode(nombres[0]);
-        celda.appendChild(textoCelda);
-        hilera.appendChild(celda);
-        tblBody.appendChild(hilera);
-        textoCelda = document.createTextNode(nombres[1]);
-        celda = document.createElement("td");
-        celda.appendChild(textoCelda);
-        hilera.appendChild(celda);
-        textoCelda = document.createTextNode(nombres[2]);
-        celda = document.createElement("td");
-        celda.appendChild(textoCelda);
-        hilera.appendChild(celda);
     });
 
-    tabla.appendChild(tblBody);
-    body.appendChild(tabla);
-    tabla.setAttribute("border", "2");
+    for (var i = 0; i < data.length; i++) {
+        for (var j = 0; j < data[i].length; j++) {
+
+            var row = document.createElement("td")
+            var cell = document.createElement("tr");
+            var textcell = document.createTextNode(data[i][j]);
+            cell.appendChild(textcell);
+            row.appendChild(cell);
+            tblBody.appendChild(row);
+        }
+
+    }
+
+
+
+
+
+    /*textcell = document.createTextNode(data[1]);
+    cell = document.createElement("td");
+    cell.appendChild(textcell);
+    row.appendChild(cell);
+    textcell = document.createTextNode(data[2]);
+    cell = document.createElement("td");
+    cell.appendChild(textcell);
+    row.appendChild(cell);*/
+
+
+
+
+    body.appendChild(div);
+    body.appendChild(table);
+    div.appendChild(table)
+    table.appendChild(tblBody);
+    table.appendChild(tblHead);
+    table.setAttribute("border", "2");
 }
 
-/*if (document.createStyleSheet) {
-    document.createStyleSheet('https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css');
-}
-else {
-    var styles = "@import url('https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css');";
-    var newSS = document.createElement('link');
-    newSS.rel = 'stylesheet';
-    newSS.href = 'data:text/css,' + escape(styles);
-    document.getElementsByTagName("head")[0].appendChild(newSS);
-}*/
 
 
